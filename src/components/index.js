@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { getImgaes } from '../actions/getImagesAction'
-import logo from '../logo.svg';
+import { getImgaes } from '../actions/getImagesAction';
+import ImageList from './imageList';
+import ImageViewer from './imageViewer';
 import '../App.css';
 
 class App extends Component {
@@ -10,28 +11,16 @@ class App extends Component {
     }
     render() {
         return (
-            <div className="App">
-            <header className="App-header">
-              <img src={logo} className="App-logo" alt="logo" />
-              <p>
-                Edit <code>src/App.js</code> and save to reload.
-              </p>
-              <a
-                className="App-link"
-                href="https://reactjs.org"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Learn React
-              </a>
-            </header>
+          <div className="App">
+              <ImageViewer />
+              <ImageList />
           </div>
         )
     }
 }
 
 const mapDispatchToProps = {
-    getImgaes
+    getImgaes,
   }
 
 export default connect(null, mapDispatchToProps)(App);

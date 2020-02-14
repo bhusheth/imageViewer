@@ -1,4 +1,4 @@
-import { GET_IMAGES, SET_IMAGES } from '../constants/actionTypes';
+import { GET_IMAGES, SET_IMAGES, VIEW_IMAGE, CLEAR_IMAGE } from '../constants/actionTypes';
 
 export const getImgaes = () => ({
     type: GET_IMAGES
@@ -7,4 +7,13 @@ export const getImgaes = () => ({
 export const setImgaes = (data) => ({
     type: SET_IMAGES,
     data
+})
+
+export const viewImage = (data) => ({
+    type: VIEW_IMAGE,
+    data
+})
+
+export const clearImage = () => ({
+    type: CLEAR_IMAGE
 })
