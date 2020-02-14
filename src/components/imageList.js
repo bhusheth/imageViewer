@@ -7,11 +7,11 @@ class ImageList extends Component {
     render() {
         return (
             <div className="left-col">
-                <h3 style={{margin: '20px', marginLeft: '95px'}}>Image List</h3>
+                <h3 style={{textAlign: 'center', margin: '20px'}}>Image List</h3>
                 {this.props.images != null &&
                     this.props.images.map(image => {
                     return (
-                        <div key={image.id} style={{margin: '20px', marginLeft: '70px'}}>
+                        <div key={image.id} style={{textAlign: 'center', padding: '10px'}}>
                             <Image 
                                 src={image.download_url}
                                 key={image.id} alt={image.author}

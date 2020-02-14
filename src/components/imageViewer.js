@@ -13,18 +13,21 @@ class ImageViewer extends Component {
                     <p>No image selected.</p> :
                     <>
                         <Col style={{ alignItems: 'center'}}>
-                            <Row
+                            <div
                                 style={{
                                     marginLeft: '20px'
                                 }}
                             >
-                                <h3>{this.props.selectedImage.author}</h3>
+                         
+                                    <h3>{this.props.selectedImage.author}</h3>
+                          
+                                
                                 <Image 
                                     src={this.props.selectedImage.download_url}
                                     key={this.props.selectedImage.id} alt={this.props.selectedImage.author}
                                     height="200" width="200"
-                                />
-                            </Row>
+                                />         
+                            </div>
                             <Row className='clear-button-margin'>
                                 <Button
                                     variant="outline-primary"

@@ -11,20 +11,21 @@ class UploadImage extends Component {
     }
 
     handleChange = (event) => {
-        this.setState({
-            file: URL.createObjectURL(event.target.files[0])
-        })
-        const selectedImage = {
-            author: 'Local Upload',
-            download_url: this.state.file,
-            id: Math.random() * 10
+
+        if (event.target.files[0] != null) {
+            const selectedImage = {
+                author: 'Local Upload',
+                download_url: URL.createObjectURL(event.target.files[0]),
+                id: Math.random() * 10
+            }
+            this.props.addImage(selectedImage);
         }
-        this.props.addImage(selectedImage);
+        
     }
 
     render() {
         return (
-            <div>
+            <div style={{margin: '30px'}}>
                 <input type='file' onChange={this.handleChange}/>
             </div>
         )

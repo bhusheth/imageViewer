@@ -7,6 +7,7 @@ import ImageViewer from './imageViewer';
 import '../App.css';
 import Header from './header';
 import UploadImage from './uploadImage';
+import Footer from './footer';
 
 class App extends Component {
     componentDidMount() {
@@ -18,13 +19,16 @@ class App extends Component {
             <div>
               <Header />
             </div>
-            <div className='container'>
+            <div className='image-list'>
               <div className='left-col'>
                 <ImageList />
               </div>
               <div className='right-col'>
                 <UploadImage />
                 <ImageViewer />
+              </div>
+              <div>
+                <Footer />
               </div>
             </div>
           </div>
