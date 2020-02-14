@@ -1,11 +1,14 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import logo from './logo.svg';
+import { getImgaes } from './actions/getImagesAction'
 import './App.css';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        {getImgaes}
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -23,4 +26,9 @@ function App() {
   );
 }
 
-export default App;
+const dispatchStatToProps = {
+  getImgaes
+}
+
+
+export default connect(null, dispatchStatToProps)(App);
