@@ -3,6 +3,9 @@ import { connect } from 'react-redux';
 import { getImgaes, viewImage } from '../actions/getImagesAction';
 import { Image } from 'react-bootstrap';
 
+// This component will dispatch an action which saga will call put with another action which
+// will store the data from the api and it will loop it here.
+
 class ImageList extends Component {
     render() {
         return (
@@ -28,7 +31,6 @@ class ImageList extends Component {
 
 const mapStateToProps = (state) => ({
     images: state.image.images.data,
-    selectedImage: state.image.selectedImage
 })
 
 const mapDispatchToProps = {

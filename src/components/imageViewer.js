@@ -5,6 +5,9 @@ import { clearImage } from '../actions/getImagesAction';
 import { Image, Row, Col } from 'react-bootstrap';
 import '../App.css'
 
+// This component will check for selected image if there is no image selected it will
+// populate no item selected and if there is one it will show the image with option to clear.
+
 class ImageViewer extends Component {
     render() {
         return (
@@ -18,10 +21,7 @@ class ImageViewer extends Component {
                                     marginLeft: '20px'
                                 }}
                             >
-                         
-                                    <h3>{this.props.selectedImage.author}</h3>
-                          
-                                
+                                <h3>{this.props.selectedImage.author}</h3>
                                 <Image 
                                     src={this.props.selectedImage.download_url}
                                     key={this.props.selectedImage.id} alt={this.props.selectedImage.author}

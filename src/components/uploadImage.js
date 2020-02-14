@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { viewImage, addImage } from '../actions/getImagesAction'
+import { addImage } from '../actions/getImagesAction'
+
+// Functionality of this component it to browse image and store it into redux store.
 
 class UploadImage extends Component {
     constructor(props) {
@@ -36,7 +38,6 @@ class UploadImage extends Component {
 }
 
 const mapDispatchToProps = {
-    viewImage,
     addImage
 }
 
