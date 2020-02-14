@@ -1,4 +1,4 @@
-import { GET_IMAGES, SET_IMAGES, VIEW_IMAGE, CLEAR_IMAGE } from '../constants/actionTypes';
+import { GET_IMAGES, SET_IMAGES, VIEW_IMAGE, CLEAR_IMAGE, ADD_IMAGE } from '../constants/actionTypes';
 
 const initialState = {
     images: [],
@@ -27,6 +27,14 @@ export default function imageReducer(state=initialState, action) {
             return {
                 ...state,
                 selectedImage: {}
+            }
+        case ADD_IMAGE:
+            return {
+                ...state,
+                images: {
+                    ...state.images,
+                    data: [data, ...state.images.data]
+                },
             }
         default: {
             return state;

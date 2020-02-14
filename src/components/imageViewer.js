@@ -1,20 +1,40 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { clearImage } from '../actions/getImagesAction'
+import Button from 'react-bootstrap/Button';
+import { clearImage } from '../actions/getImagesAction';
+import { Image, Row, Col } from 'react-bootstrap';
+import '../App.css'
 
 class ImageViewer extends Component {
     render() {
         return (
             <div>
                 {Object.entries(this.props.selectedImage).length === 0 ? 
-                    <p>Plese Select an image.</p> :
+                    <p>No image selected.</p> :
                     <>
-                        <img 
-                            src={this.props.selectedImage.download_url}
-                            key={this.props.selectedImage.id} alt={this.props.selectedImage.author}
-                            height="100" width="100"
-                        />
-                        <button onClick={() => this.props.clearImage()}>Clear</button>
+                        <Col style={{ alignItems: 'center'}}>
+                            <Row
+                                style={{
+                                    marginLeft: '20px'
+                                }}
+                            >
+                                <h3>{this.props.selectedImage.author}</h3>
+                                <Image 
+                                    src={this.props.selectedImage.download_url}
+                                    key={this.props.selectedImage.id} alt={this.props.selectedImage.author}
+                                    height="200" width="200"
+                                />
+                            </Row>
+                            <Row className='clear-button-margin'>
+                                <Button
+                                    variant="outline-primary"
+                                    onClick={() => this.props.clearImage()}
+                                    size='lg'
+                                >
+                                    Clear
+                                </Button>
+                            </Row>
+                        </Col>
                     </>
                 }
             </div>
