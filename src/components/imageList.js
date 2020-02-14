@@ -15,7 +15,7 @@ class ImageList extends Component {
                             <Image 
                                 src={image.download_url}
                                 key={image.id} alt={image.author}
-                                height="200" width="200"
+                                height="200" width="300"
                                 onClick={() => this.props.viewImage(image)}
                             />
                         </div>

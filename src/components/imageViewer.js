@@ -25,7 +25,7 @@ class ImageViewer extends Component {
                                 <Image 
                                     src={this.props.selectedImage.download_url}
                                     key={this.props.selectedImage.id} alt={this.props.selectedImage.author}
-                                    height="200" width="200"
+                                    height="200" width="300"
                                 />         
                             </div>
                             <Row className='clear-button-margin'>

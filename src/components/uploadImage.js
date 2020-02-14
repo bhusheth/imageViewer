@@ -26,7 +26,10 @@ class UploadImage extends Component {
     render() {
         return (
             <div style={{margin: '30px'}}>
-                <input type='file' onChange={this.handleChange}/>
+                <input type='file' 
+                    onChange={this.handleChange}
+                    accept="image/x-png,image/gif,image/jpeg"
+                />
             </div>
         )
     }
