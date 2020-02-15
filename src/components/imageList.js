@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux';
 import { getImgaes, viewImage } from '../actions/getImagesAction';
 import { Image } from 'react-bootstrap';
@@ -6,27 +6,25 @@ import { Image } from 'react-bootstrap';
 // This component will dispatch an action which saga will call put with another action which
 // will store the data from the api and it will loop it here.
 
-class ImageList extends Component {
-    render() {
+const ImageList = (props) => {
         return (
             <div className="left-col">
                 <h3 style={{textAlign: 'center', margin: '20px'}}>Image List</h3>
-                {this.props.images != null &&
-                    this.props.images.map(image => {
+                {props.images != null &&
+                    props.images.map(image => {
                     return (
                         <div key={image.id} style={{textAlign: 'center', padding: '10px'}}>
                             <Image 
                                 src={image.download_url}
                                 key={image.id} alt={image.author}
                                 height="200" width="300"
-                                onClick={() => this.props.viewImage(image)}
+                                onClick={() => props.viewImage(image)}
                             />
                         </div>
                     )
                 })}
             </div>
         )
-    }
 }
 
 const mapStateToProps = (state) => ({

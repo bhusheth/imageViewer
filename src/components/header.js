@@ -4,11 +4,9 @@ import '../App.css';
 
 const Header = () => {
     return (
-        <>
-            <Navbar bg='dark' fixed='top'>
-                <NavbarBrand className='navbar-brand mx-auto dashboard-header'>Technical Exercise</NavbarBrand>
-            </Navbar>
-        </>
+        <Navbar bg='dark' fixed='top'>
+            <NavbarBrand className='navbar-brand mx-auto dashboard-header'>Technical Exercise</NavbarBrand>
+        </Navbar>
     );
 }
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React,  { Component } from 'react';
 import { connect } from 'react-redux';
 import { addImage } from '../actions/getImagesAction'
 
@@ -13,10 +13,9 @@ class UploadImage extends Component {
     }
 
     handleChange = (event) => {
-
         if (event.target.files[0] != null) {
             const selectedImage = {
-                author: 'Local Upload',
+                author: event.target.files[0].name,
                 download_url: URL.createObjectURL(event.target.files[0]),
                 id: Math.random() * 10
             }

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import { clearImage } from '../actions/getImagesAction';
@@ -8,11 +8,10 @@ import '../App.css'
 // This component will check for selected image if there is no image selected it will
 // populate no item selected and if there is one it will show the image with option to clear.
 
-class ImageViewer extends Component {
-    render() {
+const ImageViewer = (props) => {
         return (
             <div>
-                {Object.entries(this.props.selectedImage).length === 0 ? 
+                {Object.entries(props.selectedImage).length === 0 ? 
                     <p>No image selected.</p> :
                     <>
                         <Col style={{ alignItems: 'center'}}>
@@ -21,17 +20,17 @@ class ImageViewer extends Component {
                                     marginLeft: '20px'
                                 }}
                             >
-                                <h3>{this.props.selectedImage.author}</h3>
+                                <h3>{props.selectedImage.author}</h3>
                                 <Image 
-                                    src={this.props.selectedImage.download_url}
-                                    key={this.props.selectedImage.id} alt={this.props.selectedImage.author}
+                                    src={props.selectedImage.download_url}
+                                    key={props.selectedImage.id} alt={props.selectedImage.author}
                                     height="200" width="300"
                                 />         
                             </div>
                             <Row className='clear-button-margin'>
                                 <Button
                                     variant="outline-primary"
-                                    onClick={() => this.props.clearImage()}
+                                    onClick={() => props.clearImage()}
                                     size='lg'
                                 >
                                     Clear
@@ -42,7 +41,6 @@ class ImageViewer extends Component {
                 }
             </div>
         )
-    }
 }
 
 const mapStateToProps = state => ({
