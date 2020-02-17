@@ -4,8 +4,8 @@ import '../App.css';
 
 const Header = () => {
     return (
-        <Navbar bg='dark' fixed='top'>
-            <NavbarBrand className='navbar-brand mx-auto dashboard-header'>Technical Exercise</NavbarBrand>
+        <Navbar data-test='navBar' bg='dark' fixed='top'>
+            <NavbarBrand data-test='dashboard-header' className='navbar-brand mx-auto dashboard-header'>Technical Exercise</NavbarBrand>
         </Navbar>
     );
 }
